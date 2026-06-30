@@ -1,3 +1,3 @@
 import {test, expect} from '@playwright/test'
 
-test("Hanle Web Table", async() => {});
+test.skip("Hanle Web Table", async() => {});
