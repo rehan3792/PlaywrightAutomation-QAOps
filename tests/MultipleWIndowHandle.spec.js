@@ -40,7 +40,7 @@ test.skip("Handle Multiple Page/window", async ({ browser }) => {
    
 });
 
-test.only("Handle Multiple Page/window usinng promise.all", async ({ browser }) => {
+test("Handle Multiple Page/window usinng promise.all", async ({ browser }) => {
 
     const context = await browser.newContext();
     const page1 = await context.newPage();

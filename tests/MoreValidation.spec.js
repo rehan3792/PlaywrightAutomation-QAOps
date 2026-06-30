@@ -31,6 +31,7 @@ test("More UI Validations", async ({ page }) => {
 
     const framePage = page.frameLocator('#courses-iframe');
     await framePage.locator('li a[href="lifetime-access"]:visible').click();
+    page.waitForSelector('.text h2');
     const textCheck = await page.locator('.text h2').textContent();
     console.log(textCheck.split(" ")[1]);
 

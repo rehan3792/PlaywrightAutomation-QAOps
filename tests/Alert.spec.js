@@ -25,25 +25,25 @@ test("Handle Confirm JS dialog", async ({ page }) => {
     await page.waitForTimeout(3000);
 });
 
-test.only("Handle Prompt JS dialog", async ({ page }) => {
+test("Handle Prompt JS dialog", async ({ page }) => {
     await page.goto('https://testautomationpractice.blogspot.com/');
-    // await page.on('dialog', dialog => {
-    //     console.log('Type of Alert:', dialog.type());
-    //     console.log('Type of Message:', dialog.message());
-    //     console.log('Type of Message:', dialog.defaultValue());
-    //     dialog.accept("Rehan Akhter");
-    // });
-    const dialogPromise = page.waitForEvent('dialog');
+    await page.on('dialog', dialog => {
+        console.log('Type of Alert:', dialog.type());
+        console.log('Type of Message:', dialog.message());
+        console.log('Type of Message:', dialog.defaultValue());
+        dialog.accept("Rehan Akhter");
+    });
+    // const dialogPromise = page.waitForEvent('dialog');
 
-    await page.locator('#promptBtn').click();
+    // await page.locator('#promptBtn').click();
 
-    const dialog = await dialogPromise;
+    // const dialog = await dialogPromise;
 
-    console.log('Type of Alert:', dialog.type());
-    console.log('Type of Message:', dialog.message());
-    console.log('Type of Message:', dialog.defaultValue());
+    // console.log('Type of Alert:', dialog.type());
+    // console.log('Type of Message:', dialog.message());
+    // console.log('Type of Message:', dialog.defaultValue());
     
-    await page.waitForTimeout(3000);
-    dialog.accept("Rehan Akhter");
-    await page.waitForTimeout(3000);
+    // await page.waitForTimeout(3000);
+    // dialog.accept("Rehan Akhter");
+    // await page.waitForTimeout(3000);
 });

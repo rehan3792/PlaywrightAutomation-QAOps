@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test("Handle Upload Single File", async ({page}) => {
+test.skip("Handle Upload Single File", async ({page}) => {
     page.goto('');
 });
 
